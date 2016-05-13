@@ -51,7 +51,7 @@ app.controller('bookCtrl',function($scope,$http) {
      */
 
     $scope.list=[];
-    $http.get('myBook/app/book.json').success(function(data) {
+    $http.get('http://yuechong.github.io/simple-Angularjs-demo/book.json').success(function(data) {
         console.log(data);
         $scope.list=data;
     });
