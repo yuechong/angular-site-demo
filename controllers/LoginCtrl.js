@@ -14,7 +14,7 @@ app.controller('LoginCtrl', function($scope, $location, $http, $rootScope, $time
     var user={};
     $http({
         method: 'get',
-        url:'/myBook/app/data.json'
+        url:'http://yuechong.github.io/simple-Angularjs-demo/data.json'
     }).then(function success(resp){
         console.log("work!");
         console.log(resp);
