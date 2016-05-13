@@ -14,7 +14,7 @@ app.controller('LoginCtrl', function($scope, $location, $http, $rootScope, $time
     var user={};
     $http({
         method: 'get',
-        url:'http://localhost:63342/myBook/app/data.json'
+        url:'/myBook/app/data.json'
     }).then(function success(resp){
         console.log("work!");
         console.log(resp);

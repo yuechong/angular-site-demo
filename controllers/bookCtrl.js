@@ -51,7 +51,7 @@ app.controller('bookCtrl',function($scope,$http) {
      */
 
     $scope.list=[];
-    $http.get('http://localhost:63342/myBook/app/book.json').success(function(data) {
+    $http.get('myBook/app/book.json').success(function(data) {
         console.log(data);
         $scope.list=data;
     });
