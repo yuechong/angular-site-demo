@@ -3,7 +3,7 @@ var app = angular.module('app', ['ngRoute','ngAnimate','angularUtils.directives.
 //is Logined
 function LoginIn($rootScope, $location) {
     if (!$rootScope.loginIn) {
-        $location.path('/');
+         $location.path('/');
     }
 }
 
