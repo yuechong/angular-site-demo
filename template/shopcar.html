@@ -1,0 +1,35 @@
+<div  ng-init="addshow=false">
+    <div class="container jumbotron">
+        <button class="btn btn-primary" ng-click="addshow=true;">Add Car</button>
+        <table class="table table-hover table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+            <tr ng-repeat="car in cars">
+                <td>{{ car.name }}</td>
+                <td>{{ car.price }}</td>
+                <td> <button class="btn btn-danger" ng-click="del($index)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="side-form" ng-show="addshow">
+        <div class="box">
+            <h1>Add Car</h1>
+            <div class="form-group">
+                <label for="">name</label>
+                <input type="text" class="form-control" ng-model="newCar.name"/>
+            </div>
+            <div class="form-group">
+                <label for="">price</label>
+                <input type="text" class="form-control" ng-model="newCar.price"/>
+            </div>
+            <div>
+                <button class="btn btn-default" ng-click="addshow=false;">Cancel</button>
+                <button class="btn btn-primary" ng-click="addonecar()">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

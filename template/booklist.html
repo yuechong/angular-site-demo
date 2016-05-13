@@ -1,0 +1,56 @@
+<div class="container jumbotron">
+    <div class="form-group">
+        <label for="">Search:</label>
+        <input type="text"  ng-model="search.$" placeholder="Search for"/>
+    </div>
+    <div class="form-group">
+        <label for="">Search Name:</label>
+        <input type="text"  ng-model="search.bookName" placeholder="Search for"/>
+    </div>
+    <!-- book -->
+    <table class="table table-bordered table-hover" align="center">
+        <tr>
+            <th ng-click="sort('id')">id
+                <span class="glyphicon" ng-show="sortKey=='id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            </th>
+            <th ng-click="sort('bookName')">bookName <span class="glyphicon" ng-show="sortKey=='bookName'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+            <th ng-click="sort('price')">price <span class="glyphicon" ng-show="sortKey=='price'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+            <th ng-click="sort('author')">author <span class="glyphicon" ng-show="sortKey=='author'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+        </tr>
+        <!-- itemsPerPage:循环个数 -->
+        <tr  dir-paginate="book in list | filter:search | filter:search.bokkName | orderBy:sortKey:reverse| itemsPerPage: 5">
+            <td>{{book.id}}</td>
+            <td>{{ book.bookName }}</td>
+            <td>{{ book.price }}</td>
+            <td>{{ book.author }}</td>
+        </tr>
+    </table>
+    <!-- page--nav -->
+    <!--
+    github:
+    https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination
+    demo:
+    http://code.ciphertrick.com/2015/08/31/server-side-pagination-in-angularjs/
+    max-size:最多几个导航按钮
+    direction-links: Next page and previous page links true/false(上一页、下一页)
+    boundary-links:First page and last page links true/false（首页、尾页）
+    auto-hide：filter是否隐藏
+    [max-size=""]
+    [direction-links=""]
+    [boundary-links=""]
+    [on-page-change=""]
+    [pagination-id=""]
+    [template-url=""]
+    [auto-hide=""]
+    -->
+    <dir-pagination-controls
+    max-size="5"
+    direction-links="true"
+    boundary-links="true"
+    template-url="lib/dirPagination.tpl.html"
+    >
+    </dir-pagination-controls>
+
+
+
+</div>
