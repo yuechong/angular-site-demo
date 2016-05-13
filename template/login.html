@@ -6,8 +6,6 @@
 		Test: admin  admin
 	</div>
     <form name="form">
-        <div>{{ form.username.$dirty }}</div>
-        <div>{{ form.username.$error }}</div>
         <div class="form-group"  ng-class="{'has-error':form.username.$dirty && form.username.$error.required}" >
             <label for="">Username</label>
             <input class="form-control" name="username" type="text"ng-required="true" ng-model="login.email" placeholder="Email"/>
